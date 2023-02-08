@@ -25,4 +25,17 @@ export const SIGN_IN = gql`
 `;
 
 export const ADD_BOOK = gql`
-    mutation addBook($bookInfo: )`
+  mutation addBook($bookInfo: Schema) {
+    addBook(bookInfo: $bookInfo) {
+      bookInfo
+    }
+  }
+`;
+
+export const REMOVE_BOOK = gql`
+  mutation removeBook($bookInfo: Schema) {
+    removeBook(_id: $_id) {
+      _id
+    }
+  }
+`;
